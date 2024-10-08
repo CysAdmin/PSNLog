@@ -1,12 +1,12 @@
 # Load NLog Library
 $nlogModule = [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {$_.ManifestModule.Name -eq "NLog.dll"}
-if(!$nlogModule){
+if (!$nlogModule) {
     try {
-        $localLibPath = "$($PSScriptRoot)\lib\NLog.5.3.4\lib\net45\NLog.dll"
+        # Use Join-Path to create a path relative to the module's root
+        $localLibPath = Join-Path -Path $PSScriptRoot -ChildPath "lib\NLog.5.3.4\lib\net45\NLog.dll"
         Add-Type -Path $localLibPath    
-    }
-    catch {
-        Write-Error -Message "Cant Load NLog.dll!"
+    } catch {
+        Write-Error -Message "Cannot load NLog.dll!"
         return
     }    
 }
