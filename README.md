@@ -1,7 +1,7 @@
 # PowerShell NLog Module
 
 ## Overview
-The PowerShell NLog Module provides a simple and flexible way to integrate NLog logging into your PowerShell scripts. It allows users to log messages at various levels (Debug, Info, Warn, Error, Fatal) and manage logging configurations easily.
+The PowerShell NLog Module provides a simple and flexible way to integrate NLog logging into your PowerShell scripts. It allows users to log messages at various levels (Debug, Info, Warn, Error, Fatal) and manage logging configurations easily. Based on the work of [@Nlog](https://github.com/NLog/NLog) - all Credits to you guys
 
 ## Features
 - **Logging Levels**: Supports multiple logging levels (Trace, Debug, Info, Warn, Error, Fatal).
@@ -29,6 +29,12 @@ Write-NLogError -Message "This Is A Error Message!"
 $newTarget = New-NLogTarget -FileName "c:\logs\myLog.log"
 $newRule = New-NLogRule -Target $newTarget
 Set-NLogConfiguration -Rule $newRule
+```
+
+### Add New Target To Rules
+```powershell
+$newTarget = New-NLogTarget -FileName "c:\logs\myLog.log"
+Add-NLogTarget -Target $newTarget
 ```
 
 ### Change Logger Name
