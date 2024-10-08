@@ -21,13 +21,13 @@ ModuleVersion = '1.0'
 GUID = '70e01971-b335-4f3b-87b5-95f6c5f7e8f9'
 
 # Author of this module
-Author = 'CysAdmin'
+Author = 'Tim Matzenauer'
 
 # Company or vendor of this module
-CompanyName = 'Unknown'
+#CompanyName = 'Unknown'
 
 # Copyright statement for this module
-Copyright = '2024 by CysAdmin'
+Copyright = '2024 by Tim Matzenauer'
 
 # Description of the functionality provided by this module
 # Description = ''
@@ -69,10 +69,12 @@ Copyright = '2024 by CysAdmin'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = '*'
+FunctionsToExport = @('Write-NLogDebug', 'Add-NLogTarget', 'Get-NLogConfiguration', 
+'New-NLogConfiguration', 'New-NLogRule', 'New-NLogTarget', 'Set-NLogLoggerName', 'Set-NLogConfiguration', 'Write-NLogDebug', 'Write-NLogError', 'Write-NLogWarn', 'Write-NLogInfo', 'Write-NLogFatal')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = '*'
+CmdletsToExport = @('Write-NLogDebug', 'Add-NLogTarget', 'Get-NLogConfiguration', 
+'New-NLogConfiguration', 'New-NLogRule', 'New-NLogTarget', 'Set-NLogLoggerName', 'Set-NLogConfiguration', 'Write-NLogDebug', 'Write-NLogError', 'Write-NLogWarn', 'Write-NLogInfo', 'Write-NLogFatal')
 
 # Variables to export from this module
 VariablesToExport = '*'
