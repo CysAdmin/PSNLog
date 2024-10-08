@@ -14,4 +14,7 @@ if(!$nlogModule){
 Get-ChildItem -Path "$PSScriptRoot\Public\ps1" -Filter *.ps1 | ForEach-Object { . $_.FullName; Export-ModuleMember $_.BaseName }
 Get-ChildItem -Path "$PSScriptRoot\Private\ps1" -Filter *.ps1 | ForEach-Object { . $_.FullName }
 
+# Call to initialize the Logger Config
+Get-NLogLogger 
+
 
